@@ -1,0 +1,111 @@
++-------------------+
+|  Prepare & Rule   |
++-------------------+
+
++-------------------+
+|      M a z e      |
++-------------------+
+Prefix => Maze_
+Create New Folder "Meshes"
+Create New Folder "Maps"
+Create New Folder "Blueprints"
+
+Create New Level "Maze" [Ctrl + N] Select "Default"
+Delete "Player Start" in World Outliner
+Delete "Floor" in World Outliner
+Change Modes "Geometry"
+Drag&Drop "Box" to Level
+Location Reset (Arrow)
+Ctrl+C
+Brush Settings x:100 y:100 z:2
+Ctrl+V
+Brush Settings x:100 y:2 z:20
+Ctrl+C
+Move Left
+Alt + MoveRight
+Ctrl+V
+Rotatin z:90
+Move Top
+Alt + Move Bottom
+Ctrl+V
+BrushSetting x:40
+Alt Drag x 4
+Ctrl+V
+Rotatin z:90
+Alt Drag x4
+
+Mode Cylinder
+OuterRadius:7
+Sides:16
+Alt+Drag to Courner
+
+Ctrl+C First BoxBrush
+
+Select All BoxBrush and one CylinderBrush
+CreateStaticMesh
+AndSave as "Maze_Mesh" to Meshes
+Delete From WorldOutliner
+
+Paste "FirstBoxBrush"
+Order To First
+Select Brush
+CreateMesh
+Save as "Mase_Cover" to Meshes
+Delete From WorldOutliner
+
+Content Brouser Drag "MotionControllerPawn" to Blueprint Folder CopyHere 
+Rename "Maze_Pawn"
+Create Child Blueprint "BP_MotionController" as "Maze_MC and Move to Blueprint Folder
+Create Child Blueprint "BP_PickupCube" as "Maze_Ball and Move to Blueprint Folder
+
+Open Maze_Pawn
+EventGraph
+SpawnBP_MotionController RightHand change class BP_MC
+
+Open Maze_Ball
+Change Static Mesh to ShapeSphere
+Transform xyz:0.05
+
+Open Meshes
+Open Maze_Mesh
+change Collision Complexity "Use Complex Collision As Simple"
+Open Maze_Coiver
+change Collision Complexity "Use Complex Collision As Simple"
+Material change "M_Glass"
+
+Open Maze_MC
+Attach 2 Static Mesh
+1 -> Maze Mesh x:80
+2 -> Maze_Cover up z:10 Attach Maze_Mesh
+Location 
+
+
+add Level Floor (Box Brush) x:1000 y:1000 z:20
+add Level "Maze_Pawn" and End key (drop to floor)
+Maze_Pawn Auto Possess Player "Player 0"
+Same Maze_Ball to Level
+
+Save All
+
+And Play
+
+
+
+
+
+
++-------------------+
+|   Beanbag Toss    |
++-------------------+
+Create New Level "BT"
+Prefix => BT_
+
++-------------------+
+|  Satellite Wars   |
++-------------------+
+Create New Level "SW"
+Prefix => SW_
+
++-------------------+
+|      M a z e      |
++-------------------+
