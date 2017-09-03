@@ -1,6 +1,8 @@
 +-------------------+
 |  Prepare & Rule   |
 +-------------------+
+Use Template "VR"
+
 
 +-------------------+
 |      M a z e      |
@@ -9,6 +11,8 @@ Prefix => Maze_
 Create New Folder "Meshes"
 Create New Folder "Maps"
 Create New Folder "Blueprints"
+
+Lock Rotation 90deg
 
 Create New Level "Maze" [Ctrl + N] Select "Default"
 Delete "Player Start" in World Outliner
